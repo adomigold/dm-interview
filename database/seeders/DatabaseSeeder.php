@@ -12,10 +12,18 @@ class DatabaseSeeder extends Seeder
      */
     public function run(): void
     {
-        \App\Models\User::factory(1)->create();
+        try {
+            \App\Models\User::factory(1)->create();
+        } catch (\Exception $e) {
+            echo $e->getMessage();
+        }
 
         // add role to user
         $user = \App\Models\User::first();
+
+        // Create Super Admin Role
+        \Spatie\Permission\Models\Role::create(['name' => 'super-admin']);
+
         $user->assignRole('super-admin');
 
         // add permissions to role
