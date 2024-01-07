@@ -24,7 +24,7 @@ class AppServiceProvider extends ServiceProvider
         view()->composer('*', function ($view) {
             $view->with(
                 'user_permissions',
-                Auth::user()->roles->first()->permissions->pluck('name')->toArray()
+                Auth::user()?->roles->first()->permissions->pluck('name')->toArray()
             );
         });
     }
