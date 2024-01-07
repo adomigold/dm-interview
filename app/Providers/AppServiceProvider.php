@@ -3,7 +3,7 @@
 namespace App\Providers;
 
 use Illuminate\Support\ServiceProvider;
-
+use Illuminate\Support\Facades\Auth; // Import the Auth class
 class AppServiceProvider extends ServiceProvider
 {
     /**
@@ -19,8 +19,13 @@ class AppServiceProvider extends ServiceProvider
      */
     public function boot(): void
     {
+        // Get user permissions through the role
+
         view()->composer('*', function ($view) {
-            $view->with('users', \App\Models\User::all());
+            $view->with(
+                'user_permissions',
+                Auth::user()->roles->first()->permissions->pluck('name')->toArray()
+            );
         });
     }
 }

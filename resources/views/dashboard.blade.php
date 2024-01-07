@@ -7,34 +7,77 @@
 
     <div class="py-12">
         <div class="max-w-7xl mx-auto sm:px-6 lg:px-8">
-            <div class="bg-white overflow-hidden shadow-sm sm:rounded-lg">
-                <div class="overflow-hidden overflow-x-auto p-6 bg-white border-b border-gray-200">
-                    <div class="min-w-full align-middle">
-                        <table class="min-w-full divide-y divide-gray-200 border">
-                            <thead>
-                            <tr>
-                                <th class="px-6 py-3 bg-gray-50 text-left">
-                                    <span class="text-xs leading-4 font-medium text-gray-500 uppercase tracking-wider">Name</span>
-                                </th>
-                                <th class="px-6 py-3 bg-gray-50 text-left">
-                                    <span class="text-xs leading-4 font-medium text-gray-500 uppercase tracking-wider">Email</span>
-                                </th>
-                            </tr>
-                            </thead>
-
-                            <tbody class="bg-white divide-y divide-gray-200 divide-solid">
-                            @foreach($users as $user)
-                                <tr class="bg-white">
-                                    <td class="px-6 py-4 whitespace-no-wrap text-sm leading-5 text-gray-900">
-                                        {{ $user->name }}
-                                    </td>
-                                    <td class="px-6 py-4 whitespace-no-wrap text-sm leading-5 text-gray-900">
-                                        {{ $user->email }}
-                                    </td>
-                                </tr>
-                            @endforeach
-                            </tbody>
-                        </table>
+            <div class="flex gap-4 pb-4">
+                <div class="flex-1">
+                    <div class="bg-white overflow-hidden shadow-sm sm:rounded-lg">
+                        <div class="px-6 pt-6 f-bold text-gray-900">
+                            {{ __("Sales") }}
+                        </div>
+                        <h2 class="p-6 font-semibold text-xl text-gray-800 leading-tight">
+                            {{ $sales }}
+                        </h2>
+                    </div>
+                </div>
+                <div class="flex-1">
+                    <div class="bg-white overflow-hidden shadow-sm sm:rounded-lg">
+                        <div class="px-6 pt-6 f-bold text-gray-900">
+                            {{ __("Earnings") }}
+                        </div>
+                        <h2 class="p-6 font-semibold text-xl text-gray-800 leading-tight">
+                            {{ $total }}
+                        </h2>
+                    </div>
+                </div>
+                <div class="flex-1">
+                    <div class="bg-white overflow-hidden shadow-sm sm:rounded-lg">
+                        <div class="px-6 pt-6 f-bold text-gray-900">
+                            {{ __("Staff") }}
+                        </div>
+                        <h2 class="p-6 font-semibold text-xl text-gray-800 leading-tight">
+                            {{ $staff }}
+                        </h2>
+                    </div>
+                </div>
+            </div>
+            <div class="flex gap-4 pt-4">
+                <div class="flex-1">
+                    <div class="bg-white overflow-hidden shadow-sm sm:rounded-lg">
+                        <div class="px-6 pt-6 f-bold text-gray-900">
+                            {{ __("Customers") }}
+                        </div>
+                        <h2 class="p-6 font-semibold text-xl text-gray-800 leading-tight">
+                            {{ $customers }}
+                        </h2>
+                    </div>
+                </div>
+                <div class="flex-1">
+                    <div class="bg-white overflow-hidden shadow-sm sm:rounded-lg">
+                        <div class="px-6 pt-6 f-bold text-gray-900">
+                            {{ __("Products") }}
+                        </div>
+                        <h2 class="p-6 font-semibold text-xl text-gray-800 leading-tight">
+                            {{ $products }}
+                        </h2>
+                    </div>
+                </div>
+                <div class="flex-1">
+                    <div class="bg-white overflow-hidden shadow-sm sm:rounded-lg">
+                        <div class="px-6 pt-6 f-bold text-gray-900">
+                            {{ __("Categories") }}
+                        </div>
+                        <h2 class="p-6 font-semibold text-xl text-gray-800 leading-tight">
+                            {{ $categories }}
+                        </h2>
+                    </div>
+                </div>
+                <div class="flex-1">
+                    <div class="bg-white overflow-hidden shadow-sm sm:rounded-lg">
+                        <div class="px-6 pt-6 f-bold text-gray-900">
+                            {{ __("Departments") }}
+                        </div>
+                        <h2 class="p-6 font-semibold text-xl text-gray-800 leading-tight">
+                            {{ $departments }}
+                        </h2>
                     </div>
                 </div>
             </div>
