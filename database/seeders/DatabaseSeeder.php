@@ -22,7 +22,11 @@ class DatabaseSeeder extends Seeder
         $user = \App\Models\User::first();
 
         // Create Super Admin Role
-        \Spatie\Permission\Models\Role::create(['name' => 'super-admin']);
+        try {
+            \Spatie\Permission\Models\Role::create(['name' => 'super-admin']);
+        } catch (\Exception $e) {
+            echo $e->getMessage();
+        }
 
         $user->assignRole('super-admin');
 
